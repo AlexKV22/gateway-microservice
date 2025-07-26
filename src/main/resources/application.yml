@@ -1,27 +1,27 @@
-spring:
-  application:
-    name: gateway
-  cloud:
-    gateway:
-      server:
-        webflux:
-          discovery:
-            locator:
-              enabled: true
-          routes:
-            - id: user_route
-              uri: lb://userModule
-              predicates:
-                - Path=/user/**
-            - id: notification_route
-              uri: lb://notificationService
-              predicates:
-                - Path=/api/**
-
-server:
-  port: 8082
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+#spring:
+#  application:
+#    name: gateway
+#  cloud:
+#    gateway:
+#      server:
+#        webflux:
+#          discovery:
+#            locator:
+#              enabled: true
+#          routes:
+#            - id: user_route
+#              uri: lb://userModule
+#              predicates:
+#                - Path=/user/**
+#            - id: notification_route
+#              uri: lb://notificationService
+#              predicates:
+#                - Path=/api/**
+#
+#server:
+#  port: 8082
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
