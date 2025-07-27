@@ -22,7 +22,7 @@ class GatewayApplicationTests {
 	void contextLoads() throws InterruptedException {
 		ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:8888/config-server/default", String.class);
 		Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
-		Thread.sleep(10000);
+		Thread.sleep(14000);
 		ResponseEntity<String> responseEureka = restTemplate.getForEntity("http://localhost:8761/eureka/apps", String.class);
 		Assertions.assertEquals(HttpStatus.OK, responseEureka.getStatusCode());
 		Assertions.assertTrue(responseEureka.getBody().toLowerCase().contains("gateway"));
